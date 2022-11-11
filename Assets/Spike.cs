@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
+    Rigidbody2D rb;
 
     [SerializeField] int speed;
 

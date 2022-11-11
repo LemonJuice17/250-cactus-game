@@ -5,7 +5,7 @@ using UnityEngine;
 public class Cactus : MonoBehaviour
 {
     [SerializeField] Rigidbody2D spike;
-    public Transform[] shootDirs;
+    [SerializeField] Transform[] shootDirs;
 
     private void Awake()
     {
