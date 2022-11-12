@@ -37,9 +37,9 @@ public class Cactus : MonoBehaviour
     {
         //Vector2 dir = (transform.position - currentDir.position).normalized;
         Rigidbody2D newSpike = Instantiate(spike, transform.position, Quaternion.identity);
-        //newSpike.transform.right = currentDir.position - newSpike.transform.position;
+        newSpike.transform.up = currentDir.position - newSpike.transform.position;
 
-        float angle = Mathf.Atan2(currentDir.position.y, currentDir.position.x) * Mathf.Rad2Deg;
-        newSpike.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        //float angle = Mathf.Atan2(currentDir.position.y, currentDir.position.x) * Mathf.Rad2Deg;
+        //newSpike.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 }
