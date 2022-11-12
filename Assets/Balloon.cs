@@ -2,20 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spike : MonoBehaviour
+public class Balloon : MonoBehaviour
 {
-    Rigidbody2D rb;
-
-    [SerializeField] int speed;
+    GameManager gameManager;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
+        gameManager = FindObjectOfType<GameManager>();
     }
+
     // Start is called before the first frame update
     void Start()
     {
-        rb.AddForce(transform.up * speed);
+        gameManager.balloons.Add(gameObject);
     }
 
     // Update is called once per frame
@@ -27,5 +26,11 @@ public class Spike : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        gameManager.balloons.Remove(gameObject);
+        gameManager.CheckForWin();
     }
 }
