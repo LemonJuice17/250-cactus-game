@@ -30,7 +30,7 @@ public class Cactus : MonoBehaviour
         foreach (var spawn in spawns)
         {
             Shoot2(spawn);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.5f / spawns.Length);
         }
 
         Destroy(gameObject);
