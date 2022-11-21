@@ -5,7 +5,6 @@ using UnityEngine;
 public class Spike : MonoBehaviour
 {
     Rigidbody2D rb;
-
     [SerializeField] int speed;
 
     private void Awake()

@@ -5,11 +5,11 @@ using UnityEngine;
 public class Cactus : MonoBehaviour
 {
     [SerializeField] Rigidbody2D spike;
-    [SerializeField] Transform[] shootDirs;
+    [SerializeField] Transform[] spawns;
 
     private void Awake()
     {
-
+       
     }
     // Start is called before the first frame update
     void Start()
@@ -23,23 +23,23 @@ public class Cactus : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    private IEnumerator OnMouseDown()
     {
-        foreach (var shootDir in shootDirs)
+        //Randomize order of array?
+
+        foreach (var spawn in spawns)
         {
-            Shoot(shootDir);
+            Shoot2(spawn);
+            yield return new WaitForSeconds(0.1f);
         }
 
         Destroy(gameObject);
     }
 
-    void Shoot(Transform currentDir)
+    void Shoot2(Transform currentSpawn)
     {
-        //Vector2 dir = (transform.position - currentDir.position).normalized;
-        Rigidbody2D newSpike = Instantiate(spike, transform.position, Quaternion.identity);
-        newSpike.transform.up = currentDir.position - newSpike.transform.position;
-
-        //float angle = Mathf.Atan2(currentDir.position.y, currentDir.position.x) * Mathf.Rad2Deg;
-        //newSpike.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        Rigidbody2D newSpike = Instantiate(spike, currentSpawn.position, Quaternion.identity);
+        Vector3 dir = newSpike.transform.position - transform.position;
+        newSpike.transform.up = dir;
     }
 }
