@@ -25,12 +25,10 @@ public class Balloon : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
-    }
+        FindObjectOfType<SoundManager>().Play("Pop");
 
-    private void OnDestroy()
-    {
         gameManager.balloons.Remove(gameObject);
         gameManager.CheckForWin();
+        Destroy(gameObject);
     }
 }

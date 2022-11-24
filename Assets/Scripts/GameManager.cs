@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
+            foreach (GameObject balloon in balloons)
+            {
+                balloon.GetComponent<Balloon>().enabled = false;
+            }
+
             levelManager.ReloadLevel();
         }
     }

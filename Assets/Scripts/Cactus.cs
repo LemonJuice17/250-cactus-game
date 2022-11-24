@@ -6,10 +6,11 @@ public class Cactus : MonoBehaviour
 {
     [SerializeField] Rigidbody2D spike;
     [SerializeField] Transform[] spawns;
+    SoundManager soundManager;
 
     private void Awake()
     {
-       
+        soundManager = FindObjectOfType<SoundManager>();
     }
     // Start is called before the first frame update
     void Start()
@@ -29,15 +30,19 @@ public class Cactus : MonoBehaviour
 
         foreach (var spawn in spawns)
         {
-            Shoot2(spawn);
+            Shoot(spawn);
             yield return new WaitForSeconds(0.5f / spawns.Length);
         }
+
+        soundManager.Play("Cactus 1");
 
         Destroy(gameObject);
     }
 
-    void Shoot2(Transform currentSpawn)
+    void Shoot(Transform currentSpawn)
     {
+        soundManager.PlayOneShot("Spike Shoot");
+
         Rigidbody2D newSpike = Instantiate(spike, currentSpawn.position, Quaternion.identity);
         Vector3 dir = newSpike.transform.position - transform.position;
         newSpike.transform.up = dir;
