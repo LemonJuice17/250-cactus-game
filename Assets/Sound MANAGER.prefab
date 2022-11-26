@@ -55,9 +55,25 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Pop
     clip: {fileID: 8300000, guid: 587297a21aef6fd4e8548e929136b467, type: 3}
-    volume: 0
+    volume: 1
     pitch: 1
     random: 1
-    minRandPitch: 0.1
-    maxRandPitch: 1.2
+    minRandPitch: -0.5
+    maxRandPitch: 0
+    source: {fileID: 0}
+  - name: Cactus 1
+    clip: {fileID: 8300000, guid: 76cdc7a2a64c61944abe942cb2371edb, type: 3}
+    volume: 1
+    pitch: 1
+    random: 1
+    minRandPitch: 0
+    maxRandPitch: 0.5
+    source: {fileID: 0}
+  - name: Spike Shoot
+    clip: {fileID: 8300000, guid: 2b8a2717588adaa49a4f0386cdcb446a, type: 3}
+    volume: 0.5
+    pitch: 1
+    random: 0
+    minRandPitch: 0
+    maxRandPitch: 0.5
     source: {fileID: 0}
