@@ -170,6 +170,7 @@ MonoBehaviour:
   - {fileID: 5298851931882787513}
   - {fileID: 8688380490544927019}
   - {fileID: 4371411530636811477}
+  totalTime: 0.1
 --- !u!58 &7880710268777863618
 CircleCollider2D:
   m_ObjectHideFlags: 0

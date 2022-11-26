@@ -25,7 +25,7 @@ public class Balloon : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        FindObjectOfType<SoundManager>().Play("Pop");
+        FindObjectOfType<SoundManager>().PlayOneShot("Pop");
 
         gameManager.balloons.Remove(gameObject);
         gameManager.CheckForWin();

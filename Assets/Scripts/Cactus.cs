@@ -6,6 +6,7 @@ public class Cactus : MonoBehaviour
 {
     [SerializeField] Rigidbody2D spike;
     [SerializeField] Transform[] spawns;
+    [SerializeField] float totalTime;
     SoundManager soundManager;
 
     private void Awake()
@@ -24,14 +25,27 @@ public class Cactus : MonoBehaviour
         
     }
 
+    void Reshuffle(Transform[] spawns)
+    {
+        // Knuth shuffle algorithm :: courtesy of Wikipedia :)
+        for (int t = 0; t < spawns.Length; t++)
+        {
+            Transform tmp = spawns[t];
+            int r = Random.Range(t, spawns.Length);
+            spawns[t] = spawns[r];
+            spawns[r] = tmp;
+        }
+    }
+
     private IEnumerator OnMouseDown()
     {
         //Randomize order of array?
+        Reshuffle(spawns);
 
         foreach (var spawn in spawns)
         {
             Shoot(spawn);
-            yield return new WaitForSeconds(0.5f / spawns.Length);
+            yield return new WaitForSeconds(totalTime / spawns.Length);
         }
 
         soundManager.Play("Cactus 1");
