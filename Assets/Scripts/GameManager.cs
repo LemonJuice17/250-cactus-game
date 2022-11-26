@@ -30,6 +30,11 @@ public class GameManager : MonoBehaviour
 
             levelManager.ReloadLevel();
         }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            levelManager.LoadNextLevel();
+        }
     }
 
     public void CheckForWin()
