@@ -431,16 +431,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741826
-  - first: {x: 2, y: -4, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 1
-      m_TileSpriteIndex: 15
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741826
   - first: {x: 6, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -496,6 +486,16 @@ Tilemap:
       serializedVersion: 2
       m_TileIndex: 1
       m_TileSpriteIndex: 13
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
+  - first: {x: 7, y: -3, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 15
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -1031,7 +1031,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2595543055471268825, guid: 5f58409280b9e7a4a8c33a46344c6d72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2595543055471268825, guid: 5f58409280b9e7a4a8c33a46344c6d72, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1195,7 +1195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2595543055471268825, guid: 5f58409280b9e7a4a8c33a46344c6d72, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2595543055471268825, guid: 5f58409280b9e7a4a8c33a46344c6d72, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1457,7 +1457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2595543055471268825, guid: 5f58409280b9e7a4a8c33a46344c6d72, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2595543055471268825, guid: 5f58409280b9e7a4a8c33a46344c6d72, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1621,7 +1621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2423409238194125984, guid: 3161294a6eb533e4aaed4e97a0713f1b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2423409238194125984, guid: 3161294a6eb533e4aaed4e97a0713f1b, type: 3}
       propertyPath: m_LocalPosition.y
