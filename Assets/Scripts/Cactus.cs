@@ -7,22 +7,33 @@ public class Cactus : MonoBehaviour
     [SerializeField] Rigidbody2D spike;
     [SerializeField] Transform[] spawns;
     [SerializeField] float totalTime;
-    SoundManager soundManager;
+    [SerializeField] SoundManager soundManager;
+    [SerializeField] Crosshair crosshair;
 
     private void Awake()
     {
-        soundManager = FindObjectOfType<SoundManager>();
+        
     }
-    // Start is called before the first frame update
+
     void Start()
+    { 
+        //soundManager = FindObjectOfType<SoundManager>();
+        crosshair = FindObjectOfType<Crosshair>();
+    }
+
+    void Update()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMouseOver()
     {
-        
+        crosshair.SetActiveColor();
+    }
+
+    private void OnMouseExit()
+    {
+        crosshair.SetInactiveColor();
     }
 
     void Reshuffle(Transform[] spawns)
@@ -42,12 +53,15 @@ public class Cactus : MonoBehaviour
         //Randomize order of array?
         Reshuffle(spawns);
 
+        soundManager = FindObjectOfType<SoundManager>();
+
         foreach (var spawn in spawns)
         {
             Shoot(spawn);
             yield return new WaitForSeconds(totalTime / spawns.Length);
         }
 
+        
         soundManager.Play("Cactus 1");
 
         Destroy(gameObject);
