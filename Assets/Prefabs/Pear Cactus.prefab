@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2064328457, guid: 5767469a96c191c46b7531a563fe6245, type: 3}
+  m_Sprite: {fileID: 236448579, guid: 5767469a96c191c46b7531a563fe6245, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,7 +108,9 @@ MonoBehaviour:
   - {fileID: 4637420953645804031}
   - {fileID: 332317086786952877}
   - {fileID: 1234121588238439908}
-  totalTime: 0.1
+  totalTime: 0.25
+  soundManager: {fileID: 0}
+  crosshair: {fileID: 0}
 --- !u!58 &1061751845267582061
 CircleCollider2D:
   m_ObjectHideFlags: 0
