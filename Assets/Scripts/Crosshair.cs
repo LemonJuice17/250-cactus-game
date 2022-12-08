@@ -13,9 +13,10 @@ public class Crosshair : MonoBehaviour
 
     private Vector3 mousePosition;
     public Vector3 Offset;
+
+    public bool canShoot;
     private void Awake()
     {
-        Singleton();
         Cursor.visible = false;
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
@@ -42,21 +43,13 @@ public class Crosshair : MonoBehaviour
         spriteRenderer.color = activeColor;
     }
 
-    void Singleton()
+    public void DisableShooting()
     {
-        if (instance == null)
-        {
-            //First run, set the instance
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+        canShoot = false;
+    }
 
-        }
-        else if (instance != this)
-        {
-            //Instance is not the same as the one we have, destroy old one, and reset to newest one
-            Destroy(instance.gameObject);
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+    public void EnableShooting()
+    {
+        canShoot = true;
     }
 }

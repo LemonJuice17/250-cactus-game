@@ -28,6 +28,21 @@ public class Cactus : MonoBehaviour
 
     private void OnMouseOver()
     {
+        if (!crosshair.canShoot)
+        {
+            return;
+        }
+
+        crosshair.SetActiveColor();
+    }
+
+    private void OnMouseStay()
+    {
+        if (!crosshair.canShoot)
+        {
+            return;
+        }
+
         crosshair.SetActiveColor();
     }
 
@@ -50,7 +65,12 @@ public class Cactus : MonoBehaviour
 
     private IEnumerator OnMouseDown()
     {
-        //Randomize order of array?
+        if (!crosshair.canShoot)
+        {
+            yield break;
+        }
+
+        GetComponent<CircleCollider2D>().enabled = false;
         Reshuffle(spawns);
 
         soundManager = FindObjectOfType<SoundManager>();
@@ -74,5 +94,11 @@ public class Cactus : MonoBehaviour
         Rigidbody2D newSpike = Instantiate(spike, currentSpawn.position, Quaternion.identity);
         Vector3 dir = newSpike.transform.position - transform.position;
         newSpike.transform.up = dir;
+    }
+
+    private void OnDestroy()
+    {
+        crosshair.EnableShooting();
+        crosshair.SetInactiveColor();
     }
 }
