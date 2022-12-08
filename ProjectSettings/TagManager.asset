@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3130407845
+    locked: 0
+  - name: Minecart
+    uniqueID: 2909841799
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Sprite UI
+    uniqueID: 2890681135
     locked: 0
