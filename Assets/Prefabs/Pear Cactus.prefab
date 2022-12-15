@@ -108,7 +108,7 @@ MonoBehaviour:
   - {fileID: 4637420953645804031}
   - {fileID: 332317086786952877}
   - {fileID: 1234121588238439908}
-  totalTime: 0.25
+  totalTime: 0
   soundManager: {fileID: 0}
   crosshair: {fileID: 0}
 --- !u!58 &1061751845267582061
