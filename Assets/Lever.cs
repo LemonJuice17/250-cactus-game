@@ -9,7 +9,9 @@ public class Lever : MonoBehaviour
     [SerializeField] Transform posA;
     [SerializeField] Transform posB;
     Transform curTargetPosition;
+    SpriteRenderer spriteRenderer;
 
+    [SerializeField] bool canBeClicked;
     public float smoothTime;
     public float speed;
     Vector3 velocity;
@@ -18,6 +20,10 @@ public class Lever : MonoBehaviour
 
     Crosshair crosshair;
 
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+    }
     private void Start()
     {
         crosshair = FindObjectOfType<Crosshair>();
@@ -32,37 +38,7 @@ public class Lever : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if ((Vector2.Distance(minecart.transform.position, posA.position) < 0.01f))
-        {
-            curTargetPosition = posB;
-        }
-        else
-        {
-            curTargetPosition = posA;
-        }
-
-        crosshair.DisableShooting();
-        minecartIsMoving = true;
-    }
-
-    private void OnMouseDown()
-    {
-        if (!crosshair.canShoot)
-        {
-            return;
-        }
-
-        if((Vector2.Distance(minecart.transform.position, posA.position) < 0.01f))
-        {
-            curTargetPosition = posB;
-        }
-        else
-        {
-            curTargetPosition = posA;
-        }
-
-        crosshair.DisableShooting();
-        minecartIsMoving = true;
+        FlipLever();
     }
 
     void MoveMinecart()
@@ -75,5 +51,22 @@ public class Lever : MonoBehaviour
             crosshair.EnableShooting();
             minecartIsMoving = false;
         }
+    }
+
+    void FlipLever()
+    {
+        spriteRenderer.flipX = !spriteRenderer.flipX;
+
+        if ((Vector2.Distance(minecart.transform.position, posA.position) < 0.01f))
+        {
+            curTargetPosition = posB;
+        }
+        else
+        {
+            curTargetPosition = posA;
+        }
+
+        crosshair.DisableShooting();
+        minecartIsMoving = true;
     }
 }
