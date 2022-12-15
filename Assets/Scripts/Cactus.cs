@@ -81,15 +81,16 @@ public class Cactus : MonoBehaviour
             yield return new WaitForSeconds(totalTime / spawns.Length);
         }
 
-        
-        soundManager.Play("Cactus 1");
+        if (soundManager)
+            soundManager.Play("Cactus 1");
 
         Destroy(gameObject);
     }
 
     void Shoot(Transform currentSpawn)
     {
-        soundManager.PlayOneShot("Spike Shoot");
+       // if (soundManager)
+       //     soundManager.PlayOneShot("Spike Shoot");
 
         Rigidbody2D newSpike = Instantiate(spike, currentSpawn.position, Quaternion.identity);
         Vector3 dir = newSpike.transform.position - transform.position;
