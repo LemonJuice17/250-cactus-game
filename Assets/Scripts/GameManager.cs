@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
     {
         if(balloons.Count <= 0)
         {
-            Win();
+            Invoke("Win", 1f);
         }
     }
 
