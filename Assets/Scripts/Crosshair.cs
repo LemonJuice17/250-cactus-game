@@ -10,6 +10,8 @@ public class Crosshair : MonoBehaviour
     public Color inactiveColor;
 
     public SpriteRenderer spriteRenderer;
+    [SerializeField] Sprite smallCrosshair;
+    [SerializeField] Sprite largeCrosshair;
 
     private Vector3 mousePosition;
     public Vector3 Offset;
@@ -36,11 +38,13 @@ public class Crosshair : MonoBehaviour
     public void SetInactiveColor()
     {
         spriteRenderer.color = inactiveColor;
+        spriteRenderer.sprite = smallCrosshair;
     }
 
     public void SetActiveColor()
     {
         spriteRenderer.color = activeColor;
+        spriteRenderer.sprite = largeCrosshair;
     }
 
     public void DisableShooting()
