@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2423409238194125987}
   - component: {fileID: 421859975292796852}
   m_Layer: 12
-  m_Name: Barrel Cactus
+  m_Name: Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
