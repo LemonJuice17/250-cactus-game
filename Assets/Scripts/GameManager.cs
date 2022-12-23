@@ -28,12 +28,13 @@ public class GameManager : MonoBehaviour
                 balloon.GetComponent<Balloon>().enabled = false;
             }
 
-            levelManager.ReloadLevel();
+
+            StartCoroutine(levelManager.ReloadLevel());
         }
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            levelManager.LoadNextLevel();
+            StartCoroutine(levelManager.LoadNextLevel());
         }
     }
 
@@ -41,13 +42,13 @@ public class GameManager : MonoBehaviour
     {
         if(balloons.Count <= 0)
         {
-            Invoke("Win", 1f);
+            Invoke("Win", 0.5f);
         }
     }
 
     void Win()
     {
         Debug.Log("Win");
-        levelManager.LoadNextLevel();
+        StartCoroutine(levelManager.LoadNextLevel());
     }
 }

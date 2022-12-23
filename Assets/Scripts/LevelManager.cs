@@ -6,35 +6,33 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     static public LevelManager instance;
+    [SerializeField] Animator transitionAnimator;
 
     private void Awake()
     {
         Singleton();
     }
 
-    void Start()
+    IEnumerator LoadLevel(int buildIndex)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    public void LoadLevel(int buildIndex)
-    {
+        transitionAnimator.SetTrigger("end");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(buildIndex);
+        
     }
 
-    public void LoadNextLevel()
+    public IEnumerator LoadNextLevel()
     {
+        transitionAnimator.SetTrigger("end");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //transitionAnimator.SetTrigger("end");
     }
 
-    public void ReloadLevel()
+    public IEnumerator ReloadLevel()
     {
+        transitionAnimator.SetTrigger("end");
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
