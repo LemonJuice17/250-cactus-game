@@ -77,3 +77,43 @@ MonoBehaviour:
     minRandPitch: 0
     maxRandPitch: 0.5
     source: {fileID: 0}
+  - name: Balloon - Pop
+    clip: {fileID: 8300000, guid: 53534e885e3a04ee18b2efbb70571f07, type: 3}
+    volume: 0.75
+    pitch: 1
+    random: 1
+    minRandPitch: -0.25
+    maxRandPitch: 0.5
+    source: {fileID: 0}
+  - name: Victory
+    clip: {fileID: 8300000, guid: 6e764791cb2b94420bad83db5381bea6, type: 3}
+    volume: 0.8
+    pitch: 1
+    random: 0
+    minRandPitch: -0.25
+    maxRandPitch: 0.5
+    source: {fileID: 0}
+  - name: Restart
+    clip: {fileID: 8300000, guid: 5ee0790ce5d1f4b2885064b5c8aa320f, type: 3}
+    volume: 0.8
+    pitch: 1
+    random: 0
+    minRandPitch: -0.25
+    maxRandPitch: 0.5
+    source: {fileID: 0}
+  - name: Lever - Hit
+    clip: {fileID: 8300000, guid: 541331950f7e84ef89c8920891c1d60b, type: 3}
+    volume: 0.8
+    pitch: 1
+    random: 0
+    minRandPitch: -0.25
+    maxRandPitch: 0.5
+    source: {fileID: 0}
+  - name: Song
+    clip: {fileID: 8300000, guid: 0f4e7ed65295a40d7b9150430dc88910, type: 3}
+    volume: 0.8
+    pitch: 1
+    random: 0
+    minRandPitch: -0.25
+    maxRandPitch: 0.5
+    source: {fileID: 0}

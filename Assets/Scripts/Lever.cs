@@ -10,6 +10,7 @@ public class Lever : MonoBehaviour
     [SerializeField] Transform posB;
     Transform curTargetPosition;
     SpriteRenderer spriteRenderer;
+    SoundManager soundManager;
 
     [SerializeField] bool canBeClicked;
     public float smoothTime;
@@ -27,6 +28,7 @@ public class Lever : MonoBehaviour
     private void Start()
     {
         crosshair = FindObjectOfType<Crosshair>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
     void Update()
     {
@@ -66,6 +68,7 @@ public class Lever : MonoBehaviour
             curTargetPosition = posA;
         }
 
+        soundManager.PlayOneShot("Lever - Hit");
         crosshair.DisableShooting();
         minecartIsMoving = true;
     }

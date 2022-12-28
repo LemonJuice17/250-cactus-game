@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public LevelManager levelManager;
-
+    SoundManager soundManager;
     public List<GameObject> balloons;
 
     private void Awake()
@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     // Update is called once per frame
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
                 balloon.GetComponent<Balloon>().enabled = false;
             }
 
-
+            Invoke("RestartSFX", 0.25f);
             StartCoroutine(levelManager.ReloadLevel());
         }
 
@@ -42,13 +42,22 @@ public class GameManager : MonoBehaviour
     {
         if(balloons.Count <= 0)
         {
-            Invoke("Win", 0.5f);
+            Invoke("VictorySFX", 0.4f);
+            Invoke("Win", 0.8f);
         }
     }
+    void RestartSFX()
+    {
+        soundManager.PlayOneShot("Restart");
+    }
 
+    void VictorySFX()
+    {
+        soundManager.PlayOneShot("Victory");
+
+    }
     void Win()
     {
-        Debug.Log("Win");
         StartCoroutine(levelManager.LoadNextLevel());
     }
 }
