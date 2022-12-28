@@ -53,7 +53,7 @@ public class Cactus : MonoBehaviour
 
     void Reshuffle(Transform[] spawns)
     {
-        // Knuth shuffle algorithm :: courtesy of Wikipedia :)
+        // Knuth shuffle algorithm
         for (int t = 0; t < spawns.Length; t++)
         {
             Transform tmp = spawns[t];

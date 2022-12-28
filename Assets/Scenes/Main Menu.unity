@@ -3464,30 +3464,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1749363424585007410, guid: d812a2888c00756419a5f7bf372f3caf, type: 3}
-      propertyPath: sounds.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1749363424585007410, guid: d812a2888c00756419a5f7bf372f3caf, type: 3}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 0f4e7ed65295a40d7b9150430dc88910, type: 3}
-    - target: {fileID: 1749363424585007410, guid: d812a2888c00756419a5f7bf372f3caf, type: 3}
-      propertyPath: sounds.Array.data[4].name
-      value: Song
-      objectReference: {fileID: 0}
-    - target: {fileID: 1749363424585007410, guid: d812a2888c00756419a5f7bf372f3caf, type: 3}
-      propertyPath: sounds.Array.data[4].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1749363424585007410, guid: d812a2888c00756419a5f7bf372f3caf, type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1749363424585007410, guid: d812a2888c00756419a5f7bf372f3caf, type: 3}
-      propertyPath: sounds.Array.data[4].maxRandPitch
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1749363424585007411, guid: d812a2888c00756419a5f7bf372f3caf, type: 3}
       propertyPath: m_Name
       value: Sound MANAGER
