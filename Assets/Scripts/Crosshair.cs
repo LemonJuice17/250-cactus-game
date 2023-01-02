@@ -17,7 +17,6 @@ public class Crosshair : MonoBehaviour
     public Vector3 Offset;
 
     public bool canShoot;
-    SoundManager soundManager;
 
     private void Awake()
     {
@@ -25,22 +24,11 @@ public class Crosshair : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
-    void Start()
-    {
-        soundManager = FindObjectOfType<SoundManager>();
-    }
-
     void Update()
     {
         mousePosition = Input.mousePosition;
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
         transform.position = mousePosition + Offset;
-
-        if (canShoot && Input.GetMouseButtonDown(0))
-        {
-            
-            soundManager.PlayOneShot("Click");
-        }
     }
 
     public void SetInactiveColor()

@@ -17,7 +17,6 @@ public class Cactus : MonoBehaviour
 
     void Start()
     { 
-        //soundManager = FindObjectOfType<SoundManager>();
         crosshair = FindObjectOfType<Crosshair>();
     }
 
@@ -51,34 +50,19 @@ public class Cactus : MonoBehaviour
         crosshair.SetInactiveColor();
     }
 
-    void Reshuffle(Transform[] spawns)
-    {
-        // Knuth shuffle algorithm
-        for (int t = 0; t < spawns.Length; t++)
-        {
-            Transform tmp = spawns[t];
-            int r = Random.Range(t, spawns.Length);
-            spawns[t] = spawns[r];
-            spawns[r] = tmp;
-        }
-    }
-
-    private IEnumerator OnMouseDown()
+    void OnMouseDown()
     {
         if (!crosshair.canShoot)
         {
-            yield break;
+            return;
         }
 
         GetComponent<CircleCollider2D>().enabled = false;
-        Reshuffle(spawns);
-
         soundManager = FindObjectOfType<SoundManager>();
 
         foreach (var spawn in spawns)
         {
             Shoot(spawn);
-            yield return new WaitForSeconds(totalTime / spawns.Length);
         }
 
         if (soundManager)
@@ -89,9 +73,6 @@ public class Cactus : MonoBehaviour
 
     void Shoot(Transform currentSpawn)
     {
-       // if (soundManager)
-       //     soundManager.PlayOneShot("Spike Shoot");
-
         Rigidbody2D newSpike = Instantiate(spike, currentSpawn.position, Quaternion.identity);
         Vector3 dir = newSpike.transform.position - transform.position;
         newSpike.transform.up = dir;
