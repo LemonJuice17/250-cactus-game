@@ -190,7 +190,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 307721375, guid: 5767469a96c191c46b7531a563fe6245, type: 3}
+  m_Sprite: {fileID: -1189749070, guid: 78abc53c69adb4408a8f3fabdbc0fa79, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -216,6 +216,7 @@ MonoBehaviour:
   minecart: {fileID: 3457689396288337252}
   posA: {fileID: 3457689396974465382}
   posB: {fileID: 3457689396085864049}
+  canBeClicked: 0
   smoothTime: 0.25
   speed: 10
 --- !u!58 &3457689396348635523
