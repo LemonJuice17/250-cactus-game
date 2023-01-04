@@ -15,11 +15,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Final/Level 2.unity
     guid: 9e69c5b4a490ac441b926615c531f77f
   - enabled: 1
+    path: Assets/Scenes/Final/Level 2b.unity
+    guid: 9b6a5fb2394b84e0885a600372c83f1e
+  - enabled: 1
     path: Assets/Scenes/Final/Level 3.unity
     guid: dfed173e48d077b47b71d1ced05f64c8
   - enabled: 1
     path: Assets/Scenes/Final/Level 4.unity
     guid: 865fc9ef876dbb7478634510d7b8c61b
+  - enabled: 1
+    path: Assets/Scenes/Final/Level 4b.unity
+    guid: e5b2577724397b542b9698149c47158c
   - enabled: 1
     path: Assets/Scenes/Final/Level 5.unity
     guid: 8bc9ee9d73c68e942bedd9c851cfe14c
@@ -32,4 +38,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final/Level 8.unity
     guid: 992939e4541db86428411ce798bb783f
+  - enabled: 1
+    path: Assets/Scenes/Final/Level 9.unity
+    guid: 2fdfac5d3b32b5743a393652e3d8de6d
+  - enabled: 1
+    path: Assets/Scenes/Well Played.unity
+    guid: dfea70e0022b4174799edcb38304432c
   m_configObjects: {}
