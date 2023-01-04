@@ -8,11 +8,10 @@ public class Lever : MonoBehaviour
 
     [SerializeField] Transform posA;
     [SerializeField] Transform posB;
-    Transform curTargetPosition;
+    [SerializeField] Transform curTargetPosition;
     SpriteRenderer spriteRenderer;
     SoundManager soundManager;
 
-    [SerializeField] bool canBeClicked;
     public float smoothTime;
     public float speed;
     Vector3 velocity;
@@ -32,6 +31,8 @@ public class Lever : MonoBehaviour
     }
     void Update()
     {
+
+
         if (minecartIsMoving)
         {
             MoveMinecart();
@@ -59,7 +60,7 @@ public class Lever : MonoBehaviour
     {
         spriteRenderer.flipX = !spriteRenderer.flipX;
 
-        if ((Vector2.Distance(minecart.transform.position, posA.position) < 0.01f))
+        if(curTargetPosition == posA)
         {
             curTargetPosition = posB;
         }
@@ -68,7 +69,17 @@ public class Lever : MonoBehaviour
             curTargetPosition = posA;
         }
 
-        soundManager.PlayOneShot("Lever - Hit");
+        /*if ((Vector2.Distance(minecart.transform.position, posA.position) < 0.01f))
+        {
+            curTargetPosition = posB;
+        }
+        else
+        {
+            curTargetPosition = posA;
+        }*/
+
+        soundManager = FindObjectOfType<SoundManager>();
+        soundManager.Play("Lever - Hit");
         crosshair.DisableShooting();
         minecartIsMoving = true;
     }

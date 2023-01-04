@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        soundManager = FindObjectOfType<SoundManager>();
+        
     }
 
     // Update is called once per frame
@@ -23,11 +23,6 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            foreach (GameObject balloon in balloons)
-            {
-                balloon.GetComponent<Balloon>().enabled = false;
-            }
-
             Invoke("RestartSFX", 0.25f);
             StartCoroutine(levelManager.ReloadLevel());
         }
@@ -42,19 +37,20 @@ public class GameManager : MonoBehaviour
     {
         if(balloons.Count <= 0)
         {
-            Invoke("VictorySFX", 0.4f);
+            Invoke("VictorySFX", 0.25f);
             Invoke("Win", 0.8f);
         }
     }
     void RestartSFX()
     {
-        soundManager.PlayOneShot("Restart");
+        soundManager = FindObjectOfType<SoundManager>();
+        soundManager.Play("Restart");
     }
 
     void VictorySFX()
     {
-        soundManager.PlayOneShot("Victory");
-
+        soundManager = FindObjectOfType<SoundManager>();
+        soundManager.Play("Victory");
     }
     void Win()
     {

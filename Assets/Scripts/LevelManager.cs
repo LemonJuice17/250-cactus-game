@@ -6,20 +6,13 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     static public LevelManager instance;
-    SoundManager soundManager;
     [SerializeField] Animator transitionAnimator;
 
     private void Awake()
     {
+        Application.targetFrameRate = 60;
         Singleton();
     }
-
-    private void Start()
-    {
-        soundManager = FindObjectOfType<SoundManager>();
-        //soundManager.Play("Song");
-    }
-
     IEnumerator LoadLevel(int buildIndex)
     {
         transitionAnimator.SetTrigger("end");
